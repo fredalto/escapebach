@@ -7,15 +7,15 @@
         body {
             background-image: url('images/leipzigtk23.jpg');
             background-size: cover;
-            background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
             text-align: center;
             color: #f5f5f5;
             font-family: 'Georgia', serif;
             text-shadow: 2px 2px 4px #000;
-            margin: 0;
-            padding: 0;
         }
         h1 {
             font-size: 3em;
@@ -59,10 +59,23 @@
         <p>Maître Bach vient de composer une œuvre inconnue. Hélas, le manuscrit a été dérobé. Nous avons besoin de toi pour retrouver la partition avant qu'elle ne disparaisse à jamais...</p>
         <p><strong>⚠️ Tu n’auras que 10 minutes. Réfléchis vite, chaque seconde compte.</strong></p>
     </div>
-    <button onclick="window.location.href='enigme1.html'">Commencer</button>
+
+    <button id="startButton">Commencer</button>
     <br>
-    <audio id="music" autoplay loop controls style="margin-top: 20px;">
+
+    <audio id="music" loop controls style="margin-top: 20px;">
         <source src="audio/J.S. Bach - Toccata and Fugue in D minor BWV 565 (152kbit_Opus).mp3" type="audio/mpeg">
+        Ton navigateur ne supporte pas l’audio HTML5.
     </audio>
+
+    <script>
+        document.getElementById('startButton').addEventListener('click', function () {
+            var audio = document.getElementById('music');
+            audio.play().catch((e) => {
+                console.log("Lecture audio bloquée par le navigateur : " + e);
+            });
+            window.location.href = 'enigme1.html';
+        });
+    </script>
 </body>
 </html>
