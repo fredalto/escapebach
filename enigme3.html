@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Quel genre musical est joué ?</title>
+    <style>
+        body {
+            background-image: url('images/orchestre baroque.jpg');
+            background-size: cover;
+            text-align: center;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        button {
+            background-color: #f44336;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quel genre musical est joué ?</h1>
+    <p>Il s’agit d’un morceau instrumental destiné à mettre en valeur plusieurs solistes accompagnés d’un petit orchestre.</p>
+    <button onclick="checkAnswer('Cantate')">Cantate</button>
+    <button onclick="checkAnswer('Suite')">Suite</button>
+    <button onclick="checkAnswer('Concerto')">Concerto</button>
+    <button onclick="checkAnswer('Fugue')">Fugue</button>
+    <audio autoplay loop>
+        <source src="audio/Johann Sebastian Bach - Brandenburg Concerto No. 3 (Allegro-Adagio) (128kbit_AAC).mp3" type="audio/mpeg">
+    </audio>
+    <script>
+        function checkAnswer(answer) {
+            if (answer === "Concerto") {
+                alert("Bravo ! Cet extrait est bien un Concerto – plus précisément un Concerto Brandebourgeois.");
+                window.location.href = 'enigme4.html';
+            } else {
+                alert("Mauvaise réponse. Essayez encore !");
+            }
+        }
+    </script>
+</body>
+</html>
