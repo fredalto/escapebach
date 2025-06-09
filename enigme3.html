@@ -57,6 +57,18 @@
             transform: scale(1.05);
         }
 
+        #message {
+            margin-top: 20px;
+            font-size: 1.2em;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            text-align: left;
+        }
+
+        #message.visible {
+            opacity: 1;
+        }
+
         audio {
             margin-top: 20px;
         }
@@ -65,23 +77,44 @@
 <body>
     <div class="container">
         <h1>Quel genre musical est joué ?</h1>
-        <p>Il s’agit d’un morceau instrumental destiné à mettre en valeur plusieurs solistes accompagnés d’un petit orchestre.</p>
+        <p>Il s'agit d'un morceau instrumental destiné à mettre en valeur plusieurs solistes accompagnés d'un petit orchestre.</p>
         <button onclick="checkAnswer('Cantate')">Cantate</button>
         <button onclick="checkAnswer('Suite')">Suite</button>
         <button onclick="checkAnswer('Concerto')">Concerto</button>
         <button onclick="checkAnswer('Fugue')">Fugue</button>
+        <div id="message"></div>
         <audio autoplay loop>
             <source src="audio/Johann Sebastian Bach - Brandenburg Concerto No. 3 (Allegro-Adagio) (128kbit_AAC).mp3" type="audio/mpeg">
         </audio>
     </div>
 
     <script>
+        const messageEl = document.getElementById('message');
+
         function checkAnswer(answer) {
+            let message = '';
+            switch (answer) {
+                case 'Concerto':
+                    message = "Bravo ! Cet extrait est bien un Concerto – plus précisément un Concerto Brandebourgeois. Bach en a composé six pour différents ensembles. Ce genre met en valeur plusieurs instruments solistes accompagnés par un petit orchestre.";
+                    break;
+                case 'Suite':
+                    message = "Les Suites de Bach sont aussi instrumentales, mais elles sont constituées de danses (allemande, courante, etc.). Ce n'est pas le cas ici.";
+                    break;
+                case 'Fugue':
+                    message = "Une fugue repose sur l'imitation stricte d'un thème entre les voix. Ici, l'accent est sur l'alternance entre solistes et tutti.";
+                    break;
+                case 'Cantate':
+                    message = "La cantate est vocale, souvent religieuse, et comporte des textes chantés. Ce morceau est purement instrumental.";
+                    break;
+            }
+
+            messageEl.innerHTML = message;
+            messageEl.classList.add('visible');
+
             if (answer === "Concerto") {
-                alert("Bravo ! Cet extrait est bien un Concerto – plus précisément un Concerto Brandebourgeois.");
-                window.location.href = 'enigme4.html';
-            } else {
-                alert("Mauvaise réponse. Essayez encore !");
+                setTimeout(() => {
+                    window.location.href = 'enigme4.html';
+                }, 4000);
             }
         }
     </script>
