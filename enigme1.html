@@ -14,6 +14,10 @@
             text-align: center;
             color: #222;
             font-family: 'Georgia', serif;
+            transition: opacity 1s ease;
+        }
+        body.fade-out {
+            opacity: 0;
         }
         .container {
             background-color: rgba(255, 255, 255, 0.8);
@@ -22,6 +26,7 @@
             max-width: 700px;
             border-radius: 15px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            position: relative;
         }
         h1 {
             font-size: 2.5em;
@@ -49,6 +54,25 @@
         audio {
             margin-top: 20px;
         }
+        #message {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #f44336;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(244, 67, 54, 0.8);
+        }
+        #message.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
     </style>
 </head>
 <body>
@@ -63,6 +87,8 @@
         <button onclick="checkAnswer('Berlin')">Berlin</button>
         <button onclick="checkAnswer('Hambourg')">Hambourg</button>
 
+        <div id="message"></div>
+
         <br>
         <audio id="bg-music" loop controls>
             <source src="audio/BachAirontheGstring.mp3" type="audio/mpeg">
@@ -71,12 +97,26 @@
     </div>
 
     <script>
+        const messageEl = document.getElementById('message');
+
+        function showMessage(text, duration = 2000) {
+            messageEl.textContent = text;
+            messageEl.classList.add('show');
+            setTimeout(() => {
+                messageEl.classList.remove('show');
+            }, duration);
+        }
+
         function checkAnswer(answer) {
             if (answer === "Leipzig") {
-                alert("✅ Correct ! Bach a passé les 27 dernières années de sa vie à Leipzig.");
-                window.location.href = 'enigme2.html';
+                showMessage("✅ Correct ! Tu es redirigé...", 1500);
+                // Transition fondu puis redirection
+                document.body.classList.add('fade-out');
+                setTimeout(() => {
+                    window.location.href = 'enigme2.html';
+                }, 1000);
             } else {
-                alert("❌ Incorrect. Réessaye !");
+                showMessage("❌ Incorrect. Essaie encore !");
             }
         }
 
