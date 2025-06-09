@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Énigme 1 – Qui était Bach ?</title>
     <style>
         body {
@@ -65,7 +65,7 @@
 
         <br>
         <audio id="bg-music" loop controls>
-            <source src="audio/Bach, Air (on the G string, string orchestra) (128kbit_AAC).mp3" type="audio/mpeg">
+            <source src="audio/BachAirontheGstring.mp3" type="audio/mpeg">
             Ton navigateur ne supporte pas l’audio HTML5.
         </audio>
     </div>
@@ -79,6 +79,14 @@
                 alert("❌ Incorrect. Réessaye !");
             }
         }
+
+        document.body.addEventListener('click', function playMusicOnce() {
+            const audio = document.getElementById('bg-music');
+            if (audio.paused) {
+                audio.play();
+            }
+            document.body.removeEventListener('click', playMusicOnce);
+        });
     </script>
 </body>
 </html>
