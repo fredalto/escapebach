@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Les fils de Bach</title>
+    <style>
+        body {
+            background-image: url('images/bureau.jpg');
+            background-size: cover;
+            text-align: center;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        button {
+            background-color: #f44336;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Les fils de Bach</h1>
+    <p>Johann Sebastian Bach a eu 20 enfants, dont plusieurs sont devenus de grands musiciens à leur tour.</p>
+    <p>❓ Lequel de ses fils est devenu compositeur à la cour du roi de Prusse ?</p>
+    <button onclick="checkAnswer('Carl Philipp Emanuel Bach')">Carl Philipp Emanuel Bach</button>
+    <button onclick="checkAnswer('Wilhelm Friedemann Bach')">Wilhelm Friedemann Bach</button>
+    <button onclick="checkAnswer('Johann Christian Bach')">Johann Christian Bach</button>
+    <button onclick="checkAnswer('Johann Sebastian Bach Junior')">Johann Sebastian Bach Junior</button>
+    <audio autoplay loop>
+        <source src="audio/C.P.E. Bach; Harpsichord Concerto in D minor, Wq. 23 ⁄ Esfahani · Poon · CMHK (128kbit_AAC).mp3" type="audio/mpeg">
+    </audio>
+    <script>
+        function checkAnswer(answer) {
+            if (answer === "Carl Philipp Emanuel Bach") {
+                alert("Bravo ! Carl Philipp Emanuel Bach était au service de Frédéric II de Prusse à Berlin.");
+                window.location.href = 'enigme5.html';
+            } else {
+                alert("Mauvaise réponse. Essayez encore !");
+            }
+        }
+    </script>
+</body>
+</html>
