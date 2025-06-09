@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Code à Trois Chiffres</title>
+    <style>
+        body {
+            background-image: url('images/bureau.jpg');
+            background-size: cover;
+            text-align: center;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        input {
+            font-size: 16px;
+            padding: 10px;
+            margin: 10px;
+        }
+        button {
+            background-color: #f44336;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Énigme Finale : Code à Trois Chiffres</h1>
+    <p>Trouvez le code à trois chiffres pour retrouver la partition perdue.</p>
+    <input type="text" id="code" placeholder="Entrez le code">
+    <button onclick="checkCode()">Soumettre</button>
+    <audio autoplay loop>
+        <source src="audio/Bach - Cantata Brich dem Hungrigen dein Brot BWV 39 - Sato ¦ Netherlands Bach Society (128kbit_AAC).mp3" type="audio/mpeg">
+    </audio>
+    <script>
+        function checkCode() {
+            var code = document.getElementById("code").value;
+            if (code === "397") {
+                alert("Félicitations ! Vous avez trouvé la partition perdue !");
+            } else {
+                alert("Mauvais code. Essayez encore !");
+            }
+        }
+    </script>
+</body>
+</html>
