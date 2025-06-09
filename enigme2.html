@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Écoute et Observe</title>
+    <style>
+        body {
+            background-image: url('images/orchestre baroque.jpg');
+            background-size: cover;
+            text-align: center;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        button {
+            background-color: #f44336;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>ÉCOUTE ET OBSERVE</h1>
+    <p>Écoute cet extrait d’une œuvre célèbre de Bach. Peux-tu deviner quel instrument domine cet ensemble ?</p>
+    <button onclick="checkAnswer('Le saxophone')">Le saxophone</button>
+    <button onclick="checkAnswer('La trompette')">La trompette</button>
+    <button onclick="checkAnswer('Le violon')">Le violon</button>
+    <button onclick="checkAnswer('Le clavecin')">Le clavecin</button>
+    <audio autoplay loop>
+        <source src="audio/Johann Sebastian Bach - Brandenburg Concerto No. 3 (Allegro-Adagio) (128kbit_AAC).mp3" type="audio/mpeg">
+    </audio>
+    <script>
+        function checkAnswer(answer) {
+            if (answer === "Le violon") {
+                alert("Bravo ! Il s’agit bien du violon, l’un des instruments rois dans les concertos de Bach.");
+                window.location.href = 'enigme3.html';
+            } else {
+                alert("Mauvaise réponse. Essayez encore !");
+            }
+        }
+    </script>
+</body>
+</html>
