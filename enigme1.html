@@ -5,7 +5,7 @@
     <title>Énigme 1 – Qui était Bach ?</title>
     <style>
         body {
-            background-image: url('images/parchemin.jpg');
+            background-image: url('images/parchemin.webp');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -39,3 +39,46 @@
             margin: 10px;
             font-size: 16px;
             border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #B22222;
+        }
+        audio {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Énigme 1</h1>
+        <p><strong>Qui était Johann Sebastian Bach ?</strong></p>
+        <p>Johann Sebastian Bach (1685–1750) était un compositeur, organiste et maître de chapelle allemand, figure majeure de la musique baroque.</p>
+        <p>❓ <strong>Dans quelle ville Bach a-t-il passé les 27 dernières années de sa vie ?</strong></p>
+
+        <button onclick="checkAnswer('Eisenach')">Eisenach</button>
+        <button onclick="checkAnswer('Leipzig')">Leipzig</button>
+        <button onclick="checkAnswer('Berlin')">Berlin</button>
+        <button onclick="checkAnswer('Hambourg')">Hambourg</button>
+
+        <br>
+        <audio id="bg-music" loop controls>
+            <source src="audio/Bach, Air (on the G string, string orchestra) (128kbit_AAC).mp3" type="audio/mpeg">
+            Ton navigateur ne supporte pas l’audio HTML5.
+        </audio>
+    </div>
+
+    <script>
+        function checkAnswer(answer) {
+            if (answer === "Leipzig") {
+                alert("✅ Correct ! Bach a passé les 27 dernières années de sa vie à Leipzig.");
+                window.location.href = 'enigme2.html';
+            } else {
+                alert("❌ Incorrect. Réessaye !");
+            }
+        }
+    </script>
+</body>
+</html>
