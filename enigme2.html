@@ -1,120 +1,53 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <title>Énigme 2 – Quel instrument ?</title>
-    <style>
-        body {
-            background-image: url('images/parchemin.webp');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            margin: 0;
-            padding: 0;
-            font-family: 'Georgia', serif;
-            color: #222;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        .container {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 0 25px rgba(0,0,0,0.25);
-            max-width: 600px;
-            text-align: center;
-        }
-        h1 {
-            font-size: 3em;
-            margin-bottom: 30px;
-            color: #4B2E00;
-        }
-        p {
-            font-size: 1.5em;
-            margin-bottom: 40px;
-        }
-        .btn-instrument {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            background-color: #6B4226;
-            color: white;
-            border: none;
-            padding: 15px 20px;
-            margin: 15px 0;
-            font-size: 1.3em;
-            border-radius: 15px;
-            cursor: pointer;
-            box-shadow: 0 5px 10px rgba(107, 66, 38, 0.5);
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-        .btn-instrument img {
-            height: 50px;
-            margin-right: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 8px rgba(0,0,0,0.2);
-        }
-        .btn-instrument:hover {
-            background-color: #9B6E3A;
-            transform: translateY(-3px);
-        }
-        #message {
-            margin-top: 20px;
-            font-weight: bold;
-            font-size: 1.2em;
-            color: #b22222;
-            min-height: 2em;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Énigme 2</h1>
-        <p>Quel instrument était le préféré de Bach pour ses œuvres sacrées ?</p>
-
-        <button class="btn-instrument" onclick="checkAnswer('Saxophone')">
-            <img src="images/saxophone.jpg" alt="Saxophone" />
-            Saxophone
-        </button>
-
-        <button class="btn-instrument" onclick="checkAnswer('Violon')">
-            <img src="images/violon.jpg" alt="Violon" />
-            Violon
-        </button>
-
-        <button class="btn-instrument" onclick="checkAnswer('Clavecin')">
-            <img src="images/clavecin.jpg" alt="Clavecin" />
-            Clavecin
-        </button>
-
-        <button class="btn-instrument" onclick="checkAnswer('Trompette')">
-            <img src="images/trompette.jpg" alt="Trompette" />
-            Trompette
-        </button>
-
-        <div id="message"></div>
-    </div>
-
-    <script>
-        const messageEl = document.getElementById('message');
-
-        function showMessage(text, color = '#b22222') {
-            messageEl.textContent = text;
-            messageEl.style.color = color;
-        }
-
-        function checkAnswer(answer) {
-            if (answer === "Clavecin") {
-                showMessage("✅ Bravo ! Le clavecin était un instrument central chez Bach.", "green");
-                setTimeout(() => {
-                    window.location.href = 'enigme3.html';
-                }, 2000);
-            } else {
-                showMessage("❌ Ce n'est pas le bon instrument, essaie encore !");
-            }
-        }
-    </script>
-</body>
-</html>
+  <meta charset="UTF-8">
+  <title>Énigme 2 – Quel instrument ?</title>
+  <style>
+    body {
+      background-image: url('images/parchemin.webp');
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      font-family: 'Georgia', serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      background-color: rgba(255,255,255,0.95);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      max-width: 700px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.8em;
+      color: #4B2E00;
+    }
+    p {
+      font-size: 1.4em;
+      margin-bottom: 30px;
+    }
+    .btn-instrument {
+      display: flex;
+      align-items: center;
+      background-color: #6B4226;
+      color: white;
+      border: none;
+      padding: 15px 20px;
+      margin: 10px auto;
+      font-size: 1.2em;
+      border-radius: 12px;
+      cursor: pointer;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    .btn-instrument img {
+      height: 50px;
+      wi
