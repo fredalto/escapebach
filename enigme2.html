@@ -5,9 +5,10 @@
   <title>Énigme 2 – Quel instrument ?</title>
   <style>
     body {
-      background-image: url('images/parchemin.webp');
+      background-image: url('images/orchestre_baroque.jpg'); /* Remplace les espaces dans le nom de fichier si besoin */
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       margin: 0;
       padding: 0;
       font-family: 'Georgia', serif;
@@ -16,6 +17,7 @@
       align-items: center;
       min-height: 100vh;
     }
+
     .container {
       background-color: rgba(255,255,255,0.95);
       padding: 40px;
@@ -24,14 +26,17 @@
       max-width: 700px;
       text-align: center;
     }
+
     h1 {
       font-size: 2.8em;
       color: #4B2E00;
     }
+
     p {
       font-size: 1.4em;
       margin-bottom: 30px;
     }
+
     .btn-instrument {
       display: flex;
       align-items: center;
@@ -48,16 +53,19 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       transition: background-color 0.3s, transform 0.2s;
     }
+
     .btn-instrument img {
       height: 50px;
       width: 50px;
       margin-right: 15px;
       border-radius: 8px;
     }
+
     .btn-instrument:hover {
       background-color: #9B6E3A;
       transform: scale(1.03);
     }
+
     #message {
       margin-top: 30px;
       font-size: 1.2em;
@@ -66,6 +74,7 @@
       opacity: 0;
       transition: opacity 0.5s ease;
     }
+
     #message.visible {
       opacity: 1;
     }
@@ -77,22 +86,22 @@
     <p>Quel instrument entends-tu dialoguer avec les cordes dans ce célèbre concerto de Bach ?</p>
 
     <button class="btn-instrument" onclick="checkAnswer('saxophone')">
-      <img src="images/saxophone.jpg" alt="Saxophone">
+      <img src="images/saxophone.png" alt="Saxophone">
       Saxophone
     </button>
 
     <button class="btn-instrument" onclick="checkAnswer('violon')">
-      <img src="images/violon.jpg" alt="Violon">
+      <img src="images/violon.png" alt="Violon">
       Violon
     </button>
 
     <button class="btn-instrument" onclick="checkAnswer('clavecin')">
-      <img src="images/clavecin.jpg" alt="Clavecin">
+      <img src="images/clavecin.png" alt="Clavecin">
       Clavecin
     </button>
 
     <button class="btn-instrument" onclick="checkAnswer('trompette')">
-      <img src="images/trompette.jpg" alt="Trompette">
+      <img src="images/trompette.png" alt="Trompette">
       Trompette
     </button>
 
