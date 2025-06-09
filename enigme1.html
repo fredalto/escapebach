@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Qui était Johann Sebastian Bach ?</title>
+    <style>
+        body {
+            background-image: url('images/parchemin.jpg');
+            background-size: cover;
+            text-align: center;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+        button {
+            background-color: #f44336;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Qui était Johann Sebastian Bach ?</h1>
+    <p>Johann Sebastian Bach (1685–1750) est un compositeur, organiste et maître de chapelle allemand...</p>
+    <p>❓ Dans quelle ville Bach a-t-il passé les 27 dernières années de sa vie ?</p>
+    <button onclick="checkAnswer('Eisenach')">Eisenach</button>
+    <button onclick="checkAnswer('Leipzig')">Leipzig</button>
+    <button onclick="checkAnswer('Berlin')">Berlin</button>
+    <button onclick="checkAnswer('Hambourg')">Hambourg</button>
+    <audio autoplay loop>
+        <source src="audio/Bach, Air (on the G string, string orchestra) (128kbit_AAC).mp3" type="audio/mpeg">
+    </audio>
+    <script>
+        function checkAnswer(answer) {
+            if (answer === "Leipzig") {
+                alert("Correct ! Bach a passé les 27 dernières années de sa vie à Leipzig.");
+                window.location.href = 'enigme2.html';
+            } else {
+                alert("Incorrect. Essayez encore !");
+            }
+        }
+    </script>
+</body>
+</html>
