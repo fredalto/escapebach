@@ -50,4 +50,87 @@
     }
     .btn-instrument img {
       height: 50px;
-      wi
+      width: 50px;
+      margin-right: 15px;
+      border-radius: 8px;
+    }
+    .btn-instrument:hover {
+      background-color: #9B6E3A;
+      transform: scale(1.03);
+    }
+    #message {
+      margin-top: 30px;
+      font-size: 1.2em;
+      font-style: italic;
+      color: #333;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    #message.visible {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Énigme 2</h1>
+    <p>Quel instrument entends-tu dialoguer avec les cordes dans ce célèbre concerto de Bach ?</p>
+
+    <button class="btn-instrument" onclick="checkAnswer('saxophone')">
+      <img src="images/saxophone.jpg" alt="Saxophone">
+      Saxophone
+    </button>
+
+    <button class="btn-instrument" onclick="checkAnswer('violon')">
+      <img src="images/violon.jpg" alt="Violon">
+      Violon
+    </button>
+
+    <button class="btn-instrument" onclick="checkAnswer('clavecin')">
+      <img src="images/clavecin.jpg" alt="Clavecin">
+      Clavecin
+    </button>
+
+    <button class="btn-instrument" onclick="checkAnswer('trompette')">
+      <img src="images/trompette.jpg" alt="Trompette">
+      Trompette
+    </button>
+
+    <div id="message"></div>
+  </div>
+
+  <script>
+    const messageEl = document.getElementById('message');
+
+    function checkAnswer(instrument) {
+      let message = '';
+      let correct = false;
+
+      switch (instrument) {
+        case 'violon':
+          message = "🎻 Bravo ! Il s’agit bien du violon, l’un des instruments rois dans les concertos de Bach. Dans ce morceau, ils dialoguent avec les autres cordes dans un style typiquement baroque.";
+          correct = true;
+          break;
+        case 'saxophone':
+          message = "❌ Impossible ! Le saxophone n’existait pas à l’époque de Bach (il a été inventé au XIXe siècle).";
+          break;
+        case 'clavecin':
+          message = "ℹ️ Le clavecin est bien présent, mais il accompagne. Ce ne sont pas ses notes qui mènent la mélodie.";
+          break;
+        case 'trompette':
+          message = "🔇 Non, tu n’entends pas de cuivres ici. Bach utilise la trompette dans certaines œuvres, mais pas dans ce concerto.";
+          break;
+      }
+
+      messageEl.textContent = message;
+      messageEl.classList.add('visible');
+
+      if (correct) {
+        setTimeout(() => {
+          window.location.href = 'enigme3.html';
+        }, 4000);
+      }
+    }
+  </script>
+</body>
+</html>
