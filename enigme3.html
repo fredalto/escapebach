@@ -7,30 +7,74 @@
         body {
             background-image: url('images/orchestre_baroque.jpg');
             background-size: cover;
-            text-align: center;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
             color: white;
-            font-family: Arial, sans-serif;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
         }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+
         button {
-            background-color: #f44336;
+            background-color: #4CAF50;
             border: none;
             color: white;
-            padding: 10px 20px;
-            margin: 5px;
+            padding: 15px 30px;
+            margin: 10px;
             cursor: pointer;
+            font-size: 1.1em;
+            border-radius: 50px;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        audio {
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Quel genre musical est joué ?</h1>
-    <p>Il s’agit d’un morceau instrumental destiné à mettre en valeur plusieurs solistes accompagnés d’un petit orchestre.</p>
-    <button onclick="checkAnswer('Cantate')">Cantate</button>
-    <button onclick="checkAnswer('Suite')">Suite</button>
-    <button onclick="checkAnswer('Concerto')">Concerto</button>
-    <button onclick="checkAnswer('Fugue')">Fugue</button>
-    <audio autoplay loop>
-        <source src="audio/Johann Sebastian Bach - Brandenburg Concerto No. 3 (Allegro-Adagio) (128kbit_AAC).mp3" type="audio/mpeg">
-    </audio>
+    <div class="container">
+        <h1>Quel genre musical est joué ?</h1>
+        <p>Il s’agit d’un morceau instrumental destiné à mettre en valeur plusieurs solistes accompagnés d’un petit orchestre.</p>
+        <button onclick="checkAnswer('Cantate')">Cantate</button>
+        <button onclick="checkAnswer('Suite')">Suite</button>
+        <button onclick="checkAnswer('Concerto')">Concerto</button>
+        <button onclick="checkAnswer('Fugue')">Fugue</button>
+        <audio autoplay loop>
+            <source src="audio/Johann Sebastian Bach - Brandenburg Concerto No. 3 (Allegro-Adagio) (128kbit_AAC).mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
     <script>
         function checkAnswer(answer) {
             if (answer === "Concerto") {
